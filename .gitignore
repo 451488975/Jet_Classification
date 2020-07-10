@@ -1,0 +1,6 @@
+
+*.z
+*.pdf
+*.cpython-36.pyc
+*-checkpoint.ipynb
+settings.json
