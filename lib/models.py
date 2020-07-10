@@ -374,7 +374,7 @@ def lstm_model(Inputs, nclasses, l1Reg=0,l1RegR=0):
     """
     Basic LSTM model
     """
-    x = LSTM(16,return_sequences=False,  kernel_regularizer=l1(l1Reg),recurrent_regularizer=l1(l1RegR),activation='relu',kernel_initializer='lecun_uniform',name='lstm_lstm')(Inputs)
+    x = LSTM(16,return_sequences=True,  kernel_regularizer=l1(l1Reg),recurrent_regularizer=l1(l1RegR),activation='relu',kernel_initializer='lecun_uniform',name='lstm_lstm')(Inputs)
     #x = Flatten()(x)
     x = Dropout(0.1)(x)
     predictions = Dense(nclasses, activation='softmax', kernel_initializer='lecun_uniform', name='rnn_densef')(x)
