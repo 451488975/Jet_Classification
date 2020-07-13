@@ -87,7 +87,3 @@ j_t|Top-quark
 ### Example ROC Curve
 
 ![Conv1D ROC Curve](https://github.com/451488975/Jet_Classification/raw/master/CNN1D/Conv1d_ROC.png "Conv1D ROC Curve")
-
-See the instruction below
-
-<https://docs.google.com/document/d/1bp4oxD565IObtLr8xh-4UKNAC1taZ59tJH6VHr2x8SE/edit#heading=h.51wpbdk2fxh5>
