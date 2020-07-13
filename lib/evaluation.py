@@ -27,7 +27,7 @@ def makeRoc(features_val, labels_val, labels, model, outputSuffix=''):
     plt.grid(True)
     plt.legend(loc='upper left')
     plt.title('%s_ROC_Curve'%(outputSuffix))
-    plt.savefig('%s_ROC.pdf'%(outputSuffix))
+    plt.savefig('%s_ROC.png'%(outputSuffix))
     return predict_test
 
 def learningCurveLoss(history):
