@@ -27,7 +27,7 @@ j_t|Top-quark
 
 ## Model structure
 
-<https://github.com/451488975/Jet_Classification/blob/master/Example/KERAS_conv1d.json>
+<https://github.com/451488975/Jet_Classification/blob/master/CNN1D/KERAS_conv1d.json>
 
 ### Input Shape: (100, 7) *100 particles, 7 features*
 
