@@ -26,7 +26,7 @@ def makeRoc(features_val, labels_val, labels, model, outputSuffix=''):
     plt.ylim(0.001,1)
     plt.grid(True)
     plt.legend(loc='upper left')
-    plt.figtext(0.25, 0.90,'%s_ROC_Curve'%(outputSuffix),fontweight='bold', wrap=True, horizontalalignment='right', fontsize=14)
+    plt.title('%s_ROC_Curve'%(outputSuffix))
     plt.savefig('%s_ROC.pdf'%(outputSuffix))
     return predict_test
 
