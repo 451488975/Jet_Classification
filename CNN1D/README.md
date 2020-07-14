@@ -1,6 +1,8 @@
-# CNN1D
+# Convolutional Neural Network
 
-## Inputs (7)
+## CNN1D
+
+### Inputs (7)
 
 Feature|Description
 :--:|:--:
@@ -14,7 +16,7 @@ j1_pdgid|PDG ID number of the constituent
 (j1_index)|This will be dropped in training
 MaxParticles: 100
 
-## Labels (5)
+### Labels (5)
 
 Label|Description
 :--:|:--:
@@ -25,7 +27,7 @@ j_z|Z-boson
 j_t|Top-quark
 (j1_index)|This will be dropped in training
 
-## Model structure
+### Model structure
 
     Model: "model"
     _________________________________________________________________
@@ -52,9 +54,9 @@ j_t|Top-quark
 
 <https://github.com/451488975/Jet_Classification/blob/master/CNN1D/KERAS_conv1d.json>
 
-### Input Shape: (100, 7) *100 particles, 7 features*
+#### Input Shape: (100, 7) *100 particles, 7 features*
 
-### Conv1D Layers (3)
+#### Conv1D Layers (3)
 
     Filters:                8 + 4 + 2
     Kernel_size:            4 + 4 + 4
@@ -63,27 +65,27 @@ j_t|Top-quark
     Activation function:    Relu
     Kernel initializer:     he_normal
 
-### Dense Layers (1)
+#### Dense Layers (1)
 
     Perceptrons:            32
     Activation function:    lecun_uniform
     Regularizer:            Lasso regularization (l = 1e-4)
     Kernel initializer:     lecun_uniform
 
-### Output layer (1)
+#### Output layer (1)
 
     Output:                 5-class Classification
     Activation function:    Softmax
     Kernel initializer:     lecun_uniform
 
-#### Learning rate:         1e-4
+##### Learning rate:         1e-4
 
-#### Optimizer:             Adam
+##### Optimizer:             Adam
 
-#### Loss function:         categorical_crossentropy
+##### Loss function:         categorical_crossentropy
 
-#### Metrics:               Accuracy
+##### Metrics:               Accuracy
 
-## Example ROC Curve
+### Example ROC Curve
 
 ![Conv1D ROC Curve](https://github.com/451488975/Jet_Classification/raw/master/CNN1D/Conv1d_ROC.png "Conv1D ROC Curve")
