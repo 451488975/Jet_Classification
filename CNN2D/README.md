@@ -62,7 +62,6 @@ j_t|Top-quark
 
 #### Metrics: Accuracy
 
-## Example ROC Curve
+### Example ROC Curve
 
-See the instruction below
-<https://docs.google.com/document/d/1bp4oxD565IObtLr8xh-4UKNAC1taZ59tJH6VHr2x8SE/edit#heading=h.51wpbdk2fxh5>
+![Conv1D ROC Curve](https://github.com/451488975/Jet_Classification/raw/master/CNN2D/Conv2d_ROC.png "Conv1D ROC Curve")
