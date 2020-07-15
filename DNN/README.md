@@ -1,6 +1,6 @@
 # Dense Neural Network (DNN)
 
-## Inputs(16)
+## Inputs (16)
 
 Feature|Description
 :--:|:--:
