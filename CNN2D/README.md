@@ -1,5 +1,5 @@
 # Convolutional Neural Network
-
+https://docs.google.com/document/d/1bp4oxD565IObtLr8xh-4UKNAC1taZ59tJH6VHr2x8SE/edit
 ## CNN2D
 
 ### Inputs (3)
