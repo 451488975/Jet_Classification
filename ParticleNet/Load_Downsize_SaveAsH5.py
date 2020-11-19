@@ -39,13 +39,19 @@ def loadNdownsize (filePath,features,labels,size,seed,ratio=None):
         mini_df = downsize_unbalanced(df,size,seed,labels,ratio=ratio)
     # Sort constituents by pt in each jet
     mini_df.sort_values(by=['j1_ptrel'],ascending=False,inplace=True)
-    # Add new feature "constituents_index"
+    # Add new feature "constituents_index", "j1_ptLog", "j1_eLog"
     cIndex = np.array([],dtype='int8')
     for i in tqdm(np.unique(mini_df['j_index'])):
         new_cIndex = np.arange(mini_df[mini_df['j_index']==i].shape[0])
         cIndex = np.append(cIndex, new_cIndex)
+    
+    mini_df['j1_ptLog'] = np.log(mini_df['j1_pt'])
+    mini_df['j1_eLog'] = np.log(mini_df["j1_e"])
     mini_df['constituents_index'] = cIndex
-    _features = features+['constituents_index']
+
+    mini_df.drop(['j1_pt','j1_e'],axis=1,inplace=True)
+    
+    _features = mini_df.columns
     return mini_df, _features
 
 def saveAsH5(filePath,df, size,features,labels,ratio=None):
@@ -62,9 +68,9 @@ def saveAsH5(filePath,df, size,features,labels,ratio=None):
         savePath = filePath+"data_%sjets_%dlabels_unbalanced"%(size*np.sum(ratio),len(labels))+'.h5'
         
     with h5py.File(savePath, 'w') as f:
-            for col in features:
-                f.create_dataset(col, data=df[col])
-            f.create_dataset('label', data = label_list)
+        for col in features:
+            f.create_dataset(col, data=df[col])
+        f.create_dataset('label', data = label_list)
 
 def LoadTransSave (filePath, features, labels, size, seed,ratio=None):
     mini_df, _features = loadNdownsize(filePath,features, labels,size=size,seed=seed,ratio=ratio)
