@@ -44,14 +44,20 @@ def loadNdownsize (filePath,features,labels,size,seed,ratio=None):
     for i in tqdm(np.unique(mini_df['j_index'])):
         new_cIndex = np.arange(mini_df[mini_df['j_index']==i].shape[0])
         cIndex = np.append(cIndex, new_cIndex)
-    
+
     mini_df['j1_ptLog'] = np.log(mini_df['j1_pt'])
     mini_df['j1_eLog'] = np.log(mini_df["j1_e"])
     mini_df['constituents_index'] = cIndex
+    mini_df = mini_df.sort_values(by='j_index')
 
     mini_df.drop(['j1_pt','j1_e'],axis=1,inplace=True)
+    _features = mini_df.columns.values.tolist()
     
-    _features = mini_df.columns
+    _features.remove('j_q')
+    _features.remove('j_t')
+    _features.remove('j_g')
+    _features.remove('j_w')
+    _features.remove('j_z')
     return mini_df, _features
 
 def saveAsH5(filePath,df, size,features,labels,ratio=None):
